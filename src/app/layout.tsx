@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { PrimeReactProvider } from "primereact/api";
+import 'primereact/resources/themes/lara-light-green/theme.css'
+import '/node_modules/primeflex/primeflex.css'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <PrimeReactProvider>
+          {children}
+        </PrimeReactProvider>
       </body>
     </html>
   );
